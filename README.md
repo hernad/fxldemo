@@ -62,3 +62,11 @@ Copy the deployment descriptor and customize the following properties:
 
 See http://fxldemo.tornado.no for a prebuilt version of this application, including native installers
 for Windows, MacOSX and Linux.
+
+
+### Http server test
+
+      mvn package # generates target/app jars and manifest
+      cd target/app
+      python -m SimpleHTTPServer 8080
+
