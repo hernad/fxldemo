@@ -15,12 +15,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import org.controlsfx.control.SegmentedButton;
 
+import java.io.IOException;
+
 /**
  * A simple JavaFX application with a dependency on ControlsFX. Nothing interesting here :)
  */
 public class FxlDemo extends Application {
 	public void start(Stage stage) throws Exception {
-		stage.setTitle("Hello World");
+		stage.setTitle("hernad-test open");
 		stage.initStyle(StageStyle.UNDECORATED);
 
 		Label label = new Label(stage.getTitle());
@@ -29,10 +31,10 @@ public class FxlDemo extends Application {
 		// Alibi for including ControlsFX Dependency :)
 		SegmentedButton fxcontrol = new SegmentedButton(new ToggleButton("One"), new ToggleButton("Two"), new ToggleButton("Three"));
 
-		Button exitButton = new Button("Exit");
+		Button exitButton = new Button("Run");
 		exitButton.setStyle("-fx-font-weight: bold");
-		exitButton.setOnAction(event -> Platform.exit());
-
+		//exitButton.setOnAction(event -> Platform.exit());
+		exitButton.setOnAction( event -> this.runExec() );
 		VBox root = new VBox(label, fxcontrol, exitButton);
 		root.setAlignment(Pos.CENTER);
 		root.setSpacing(20);
@@ -42,4 +44,21 @@ public class FxlDemo extends Application {
 		stage.setScene(new Scene(root));
 		stage.show();
 	}
+
+	private void runExec() {
+
+		ProcessBuilder	 processBuilder;
+		processBuilder = new ProcessBuilder("open", "/Users/ernadhusremovic/F18/F18_knowhow/F18");
+		try {
+			processBuilder.start();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
+
+/*
+
+
+
+ */

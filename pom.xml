@@ -43,7 +43,7 @@
         <app.version>2.0</app.version>
 
         <!-- Base URL where you will host the application artifacts -->
-        <app.url>http://fxldemo.tornado.no/</app.url>
+        <app.url>http://localhost:8080/</app.url>
 
         <!-- Optional scp target for application artifacts hosted at the above url -->
         <app.deploy.target>w48839@fxldemo.tornado.no:fxldemo</app.deploy.target>
